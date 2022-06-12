@@ -5,11 +5,11 @@ function AutoPlayer() {
   return (
     <div className="autoplayer">
       <iframe
-        width="1700"
+        width="1300"
         height="1000"
         src="https://www.youtube.com/embed/yQEondeGvKo?autoplay=1"
         title="YouTube video player"
-        style={{ width: "100%", height: "120%" }}
+        style={{ width: "97%", height: "120%" }}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       />
       <div className="autoplayer-details">
