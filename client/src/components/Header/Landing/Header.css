@@ -1,13 +1,21 @@
 #navbarNav.nav-item.nav-link a:hover{
     color: red;
   }
+  #header-nav{
+    height: 14vh !important;
+  }
   .nav-link:hover{
-    color: red;
+    color: red !important;
   }
   .nav-link{
-    color: white;
+    color: white !important;
   }
-  
+  .container-fluid{
+    display: flex;
+  }
   #header-nav .nav-link a:hover{
     color: red;
+  }
+  nav{
+    display: flex;
   }
