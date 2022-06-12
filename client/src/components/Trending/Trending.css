@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Playfair+Display:ital@1&display=swap");
+.trending{
+    width: 100%;
+    height: fit-content;
+    padding: 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.lists{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.list{
+    width: 30%;
+    height: 10%;
+    display: flex;
+    align-items: flex-end;
+    font-family: "Playfair Display", serif;
+    border: 2px solid black;
+    border-radius: 5px;
+}
