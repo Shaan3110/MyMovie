@@ -1,0 +1,13 @@
+#navbarNav.nav-item.nav-link a:hover{
+    color: red;
+  }
+  .nav-link:hover{
+    color: red;
+  }
+  .nav-link{
+    color: white;
+  }
+  
+  #header-nav .nav-link a:hover{
+    color: red;
+  }
