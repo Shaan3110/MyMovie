@@ -8,7 +8,7 @@ export const getGenre = async (id: string) => {
     method: "GET",
     url: base_url,
     params: {
-      api_key: String(process.env.REACT_API_KEY),
+      api_key: String(process.env.REACT_APP_API_KEY),
       language: "en-US",
     },
   };

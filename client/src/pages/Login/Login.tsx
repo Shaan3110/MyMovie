@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import { loginauth } from "../../axios/Auth";
 
 function Login() {
+  const [email, setemail] = useState<string>("");
+  const [password, setpassword] = useState<string>("");
+  const [login, setlogin] = useState<Boolean>(false);
+  const [submit, setsubmit] = useState<Boolean>(false);
+
+  const submituser = () => {
+    const result = loginauth(email, password);
+    console.log(result);
+  };
+
+  useEffect(() => {
+    if (login) {
+      submituser();
+    }
+  }, [submit]);
+
+  const loginuser = () => {
+    setlogin(true);
+    return submit ? setsubmit(false) : setsubmit(true);
+  };
+
   return (
     <>
       <Header />
@@ -13,7 +35,14 @@ function Login() {
           <div id="errormessage" />
           <span className="seperator" />
           <div className="input-text">
-            <input type="email" name="email" placeholder="Enter your Email" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your Email"
+              onChange={(event) => {
+                setemail(event.target.value);
+              }}
+            />
           </div>
           <div className="input-text">
             <input
@@ -21,13 +50,22 @@ function Login() {
               type="password"
               name="password"
               placeholder="Enter your password"
+              onChange={(event) => {
+                setpassword(event.target.value);
+              }}
             />
             <i
               className="fa fa-fw fa-eye field-icon toggle-password"
               id="togglePassword"
             />
           </div>
-          <input className="signin-button" type="submit" value="Sign In" />
+          <input
+            className="signin-button"
+            value="Sign In"
+            onClick={loginuser}
+            contentEditable={false}
+            style={{ cursor: "pointer" }}
+          />
           <div className="remember-flex">
             <div />
             <div className="help">

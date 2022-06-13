@@ -1,21 +1,21 @@
 export interface AuthLogin {
   method: string;
   url: string;
-  body: AuthLoginBody;
+  data: AuthLoginBody;
 }
 
 export interface AuthLoginBody {
-    email: string;
-    password: string;
+  email: string;
+  password: string;
 }
 export interface AuthRegister {
   method: string;
   url: string;
-  body: AuthRegisterBody;
+  data: AuthRegisterBody;
 }
 
 export interface AuthRegisterBody {
-    name: string;
-    email: string;
-    password: string;
+  name: string;
+  email: string;
+  password: string;
 }
