@@ -21,8 +21,8 @@ function Login() {
     }
   }, [submit]);
 
-  const loginuser = (event:any) => {
-    event?.preventDefault()
+  const loginuser = (event: any) => {
+    event?.preventDefault();
     setlogin(true);
     return submit ? setsubmit(false) : setsubmit(true);
   };
