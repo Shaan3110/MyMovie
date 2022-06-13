@@ -31,10 +31,6 @@ async function Userdata(req,res,next){
         {
           req.user=data.user;
         }
-        if(data.hospital)
-        {
-          req.hospital=data.hospital;
-        }
 
         //calls the next function after no error occurred
         next();

@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light bg-dark"
@@ -50,16 +52,26 @@ function Header() {
               </a>
             </li>
           </ul>
-          <form id="searchForm" className="d-flex">
-            <input
-              className="form-control me-2"
-              type="text"
-              id="searchText"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-danger" type="submit">
-              Search
+          <form id="searchForm" className="d-flex w-30">
+            <button
+              className="btn btn-danger"
+              type="submit"
+              style={{ marginRight: "30px" }}
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              Sign Up
+            </button>
+            <button
+              className="btn btn-danger"
+              type="submit"
+              style={{ marginRight: "30px" }}
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Sign In
             </button>
           </form>
         </div>

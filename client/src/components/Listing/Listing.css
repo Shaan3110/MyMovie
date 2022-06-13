@@ -1,22 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Arvo&family=Playfair+Display:ital@1&display=swap");
 .trending{
-    width: 100%;
+    width: 100vw;
     height: fit-content;
     padding: 3rem 3rem;
     display: flex;
     flex-direction: column;
+    font-family: "Playfair Display", serif;
+}
+.trending h1{
+    padding: 3rem 0rem;
 }
 .lists{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 100vw;
+    min-height: 100px;
 }
 .list{
-    width: 30%;
-    height: 10%;
+    min-width: 30%;
+    min-height: 30vh;
     display: flex;
     align-items: flex-end;
-    font-family: "Playfair Display", serif;
-    border: 2px solid black;
-    border-radius: 5px;
+    border: 2px solid white;
+    border-radius: 11px;
+    background-color: black;
 }
