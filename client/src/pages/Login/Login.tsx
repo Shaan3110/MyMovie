@@ -21,7 +21,8 @@ function Login() {
     }
   }, [submit]);
 
-  const loginuser = () => {
+  const loginuser = (event:any) => {
+    event?.preventDefault()
     setlogin(true);
     return submit ? setsubmit(false) : setsubmit(true);
   };
@@ -59,13 +60,9 @@ function Login() {
               id="togglePassword"
             />
           </div>
-          <input
-            className="signin-button"
-            value="Sign In"
-            onClick={loginuser}
-            contentEditable={false}
-            style={{ cursor: "pointer" }}
-          />
+          <button className="signin-button" type="submit" onClick={loginuser}>
+            Sign In
+          </button>
           <div className="remember-flex">
             <div />
             <div className="help">
