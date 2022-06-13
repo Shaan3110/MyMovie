@@ -50,16 +50,16 @@ function Header() {
               </a>
             </li>
           </ul>
-          <form id="searchForm" className="d-flex">
-            <input
-              className="form-control me-2"
-              type="text"
-              id="searchText"
-              placeholder="Search"
-              aria-label="Search"
-            />
+          <form id="searchForm" className="d-flex w-30">
+            <button
+              className="btn btn-danger"
+              type="submit"
+              style={{ marginRight: "30px" }}
+            >
+              Sign Up
+            </button>
             <button className="btn btn-danger" type="submit">
-              Search
+              Sign In
             </button>
           </form>
         </div>
