@@ -13,21 +13,21 @@ function SignUp() {
   const [register, setregister] = useState<Boolean>(false);
   const [submit, setsubmit] = useState<Boolean>(false);
 
-  const submituser = () => {
-    if (password === conpassword) {
-      const result = signupauth(name, email, password);
-      if (result !== undefined) {
-        navigate("/");
-      }
-    } else {
-      alert("Password and confirm password not same");
-    }
-  };
-
   useEffect(() => {
+    const submituser = () => {
+      if (password === conpassword) {
+        const result = signupauth(name, email, password);
+        if (result !== undefined) {
+          navigate("/");
+        }
+      } else {
+        // alert("Password and confirm password not same");
+      }
+    };
     if (register) {
       submituser();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submit]);
 
   const registeruser = (event: any) => {

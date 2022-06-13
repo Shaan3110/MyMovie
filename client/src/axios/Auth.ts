@@ -17,15 +17,13 @@ export const loginauth = async (email: string, password: string) => {
   try {
     axios
       .request(options)
-      .then(function (response) {
+      .then((response) => {
         if (response?.status === 200) {
           setAuthToken(response?.data?.token);
         }
         return response?.status as Number;
       })
-      .catch(function (error) {
-        console.error(error);
-      });
+      .catch();
   } catch (e) {
     // console.log(e);
   }
@@ -48,15 +46,13 @@ export const signupauth = async (
   try {
     axios
       .request(options)
-      .then(function (response) {
+      .then((response) => {
         if (response?.status === 200) {
           setAuthToken(response?.data?.token);
         }
         return response?.status as Number;
       })
-      .catch(function (error) {
-        console.error(error);
-      });
+      .catch();
   } catch (e) {
     // console.log(e);
   }

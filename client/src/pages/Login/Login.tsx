@@ -11,17 +11,19 @@ function Login() {
   const [login, setlogin] = useState<Boolean>(false);
   const [submit, setsubmit] = useState<Boolean>(false);
 
-  const submituser = () => {
-    const result = loginauth(email, password);
-    if (result !== undefined) {
-      navigate("/");
-    }
-  };
-
   useEffect(() => {
+    const submituser = () => {
+      const result = loginauth(email, password);
+      if (result !== undefined) {
+        navigate("/");
+      }
+    };
+
     if (login) {
       submituser();
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submit]);
 
   const loginuser = (event: any) => {
