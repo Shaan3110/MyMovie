@@ -2,6 +2,15 @@
 
 Hello Coder 👋
 
+Welcome to this amazing website for all the movie lovers
+
+Here's a small [demo](https://entertainmentnight.netlify.app/)
+
+Recommended Device -
+**PC**
+Recommended Browser -
+**Chrome**
+
 ## Frontend
 
 Go to client folder 
