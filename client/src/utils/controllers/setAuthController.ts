@@ -1,3 +1,3 @@
-const setAuthToken = localStorage.getItem("idtoken") as string;
+const setAuthToken=(token:string) => localStorage.setItem("idtoken",token);
 
 export { setAuthToken };
