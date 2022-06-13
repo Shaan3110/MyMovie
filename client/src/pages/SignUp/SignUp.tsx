@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { signupauth } from "../../axios/Auth";
 
 function SignUp() {
+  const navigate = useNavigate();
   const [name, setname] = useState<string>("");
   const [email, setemail] = useState<string>("");
   const [password, setpassword] = useState<string>("");
@@ -15,7 +16,9 @@ function SignUp() {
   const submituser = () => {
     if (password === conpassword) {
       const result = signupauth(name, email, password);
-      // console.log(result);
+      if (result !== undefined) {
+        navigate("/");
+      }
     } else {
       alert("Password and confirm password not same");
     }

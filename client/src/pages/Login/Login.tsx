@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { loginauth } from "../../axios/Auth";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setemail] = useState<string>("");
   const [password, setpassword] = useState<string>("");
   const [login, setlogin] = useState<Boolean>(false);
@@ -12,7 +13,9 @@ function Login() {
 
   const submituser = () => {
     const result = loginauth(email, password);
-    // console.log(result);
+    if (result !== undefined) {
+      navigate("/");
+    }
   };
 
   useEffect(() => {
