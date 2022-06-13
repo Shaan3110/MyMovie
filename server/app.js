@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const connecttomongo = require('./databases/Database');
 const app = express();
 
@@ -11,6 +12,8 @@ connecttomongo();
 
 //middleware for json req
 app.use(express.json())
+
+app.use(cors())
 
 
 //Routes

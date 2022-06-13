@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import { signupauth } from "../../axios/Auth";
 
 function SignUp() {
+  const [name, setname] = useState<string>("");
+  const [email, setemail] = useState<string>("");
+  const [password, setpassword] = useState<string>("");
+  const [conpassword, setconpassword] = useState<string>("");
+  const [register, setregister] = useState<Boolean>(false);
+  const [submit, setsubmit] = useState<Boolean>(false);
+
+  const submituser = () => {
+    if (password === conpassword) {
+      const result = signupauth(name, email, password);
+      console.log(result);
+    } else {
+      alert("Password and confirm password not same");
+    }
+  };
+
+  useEffect(() => {
+    if (register) {
+      submituser();
+    }
+  }, [submit]);
+
+  const registeruser = (event: any) => {
+    event.preventDefault();
+    setregister(true);
+    return submit ? setsubmit(false) : setsubmit(true);
+  };
   return (
     <>
       <Header />
@@ -13,10 +41,24 @@ function SignUp() {
           <div id="errormessage" />
           <span className="seperator" />
           <div className="input-text">
-            <input type="text" name="name" placeholder="Enter your name" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              onChange={(event) => {
+                setname(event.target.value);
+              }}
+            />
           </div>
           <div className="input-text">
-            <input type="email" name="email" placeholder="Enter your Email" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your Email"
+              onChange={(event) => {
+                setemail(event.target.value);
+              }}
+            />
           </div>
           <div className="input-text">
             <input
@@ -24,6 +66,9 @@ function SignUp() {
               type="password"
               name="password"
               placeholder="Enter your password"
+              onChange={(event) => {
+                setpassword(event.target.value);
+              }}
             />
             <i
               className="fa fa-fw fa-eye field-icon toggle-password"
@@ -36,13 +81,22 @@ function SignUp() {
               type="password"
               name="retypepassword"
               placeholder="Confirm password"
+              onChange={(event) => {
+                setconpassword(event.target.value);
+              }}
             />
             <i
               className="fa fa-fw fa-eye field-icon toggle-password2"
               id="togglePassword"
             />
           </div>
-          <input className="signin-button" type="submit" value="Sign Up" />
+          <button
+            className="signin-button"
+            onClick={registeruser}
+            type="submit"
+          >
+            Sign Up
+          </button>
           <div className="remember-flex">
             <div />
             <div className="help">

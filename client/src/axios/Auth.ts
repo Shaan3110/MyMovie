@@ -7,7 +7,7 @@ const baseUrl: string = String(process.env.REACT_APP_SERVER_URL);
 export const loginauth = async (email: string, password: string) => {
   console.log(baseUrl);
   const options: AuthLogin = {
-    method: "POST",
+    method: "post",
     url: `${baseUrl}auth/login`,
     data: {
       email,
@@ -37,7 +37,7 @@ export const signupauth = async (
   password: string,
 ) => {
   const options: AuthRegister = {
-    method: "POST",
+    method: "post",
     url: `${baseUrl}auth/register`,
     data: {
       name,

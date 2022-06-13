@@ -65,7 +65,6 @@ router.post('/register',
         name: req.body.name,
         email: req.body.email,
         password: secPass,
-        contact: req.body.contact,
       })
 
       //module returns the token in normal form which we will send to the user in json format
@@ -172,110 +171,6 @@ router.post('/register',
       });
     }
   })
-
-
-
-
-
-
-  //account details route
-  router.post('/account',
-
-  //middleware adding to fetch details of the user with the token
-  Userdata,
-  //validating the email and password 
-  async (req, res) => {
-    try {
-      userId=req.user.id;
-
-      //select -password don't share the password into the parameter
-      //here we can also use findOne({id:userId}).select("-password") which would return the same response
-      const details=await User.findById(userId).select("-password");
-
-      //sharing the row as the response
-      res.send(details);
-    } catch (error) {
-      console.log(error.message);
-      res.status(500).json({
-        "errors": [{
-          "value": "no-value",
-          "msg": "Sorry for the inconvinience some internal server error occurred",
-          "param": "no-param",
-          "location": "server"
-        }]
-      });
-    }
-  })
-
-
-//updating route for account
-  router.post('/update',
-  Userdata,
-  async (req, res) => {
-      try {
-          //destructuring the contact and name from body 
-          const {name,contact} = req.body;
-
-          //checking if the contact is of length less than 9 and contact changed to string first for length function
-          if(contact.toString().length< 9)
-          {
-              return res.status(400).json({
-                  "errors": [{
-                      "value": "no-value",
-                      "msg": "Invalid contact or name",
-                      "param": "no-param",
-                      "location": "server"
-                  }]
-              });
-          }
-          if(req.user)
-          {
-              let user = await User.findById(req.user.id);
-              if(!user)
-              {
-                  return res.status(500).json({
-                      "errors": [{
-                          "value": "no-value",
-                          "msg": "Sorry for the inconvinience some internal server error occurred",
-                          "param": "no-param",
-                          "location": "server"
-                      }]
-                  });
-              }
-              else
-              {
-                  let updatedUser= {};
-                  updatedUser.contact=contact;
-                  updatedUser.name=name;
-                  user= await User.findByIdAndUpdate(req.user.id,{$set:updatedUser},{new:true});
-                  res.status(200).send(user);
-              }
-          }
-          else
-          {
-              return res.status(401).json({
-                  "errors": [{
-                      "value": "no-value",
-                      "msg": "Your session has expired",
-                      "param": "no-param",
-                      "location": "server"
-                  }]
-              });
-          }
-      } catch (error) {
-          console.log(error.message);
-          res.status(500).json({
-              "errors": [{
-                  "value": "no-value",
-                  "msg": "Sorry for the inconvinience some internal server error occurred",
-                  "param": "no-param",
-                  "location": "server"
-              }]
-          });
-      }
-  })
-
-
 
 
 module.exports = router;

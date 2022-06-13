@@ -257,10 +257,11 @@
     outline: transparent;
     text-indent: 18px;
   }
-  
-  .input-text input::-webkit-input-placeholder {
-    font-size: 1rem;
-    color: #bdc7c9;
+  input[type="submit"]:hover {
+    cursor: pointer;
+    border: 2px gray solid;
+    background-color: red;
+    transform: scale(0.95);
   }
   
   .input-text input::-moz-placeholder {
