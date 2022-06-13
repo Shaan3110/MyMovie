@@ -5,7 +5,7 @@ import setAuthToken from "../utils/controllers/setAuthController";
 const baseUrl: string = String(process.env.REACT_APP_SERVER_URL);
 
 export const loginauth = async (email: string, password: string) => {
-  console.log(baseUrl);
+//   console.log(baseUrl);
   const options: AuthLogin = {
     method: "post",
     url: `${baseUrl}auth/login`,
@@ -27,7 +27,7 @@ export const loginauth = async (email: string, password: string) => {
         console.error(error);
       });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 };
 
@@ -58,6 +58,6 @@ export const signupauth = async (
         console.error(error);
       });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 };

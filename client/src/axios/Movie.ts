@@ -22,6 +22,6 @@ export const getGenre = async (id: string) => {
         console.error(error);
       });
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 };

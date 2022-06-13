@@ -15,7 +15,7 @@ function SignUp() {
   const submituser = () => {
     if (password === conpassword) {
       const result = signupauth(name, email, password);
-      console.log(result);
+      // console.log(result);
     } else {
       alert("Password and confirm password not same");
     }

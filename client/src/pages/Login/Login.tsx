@@ -12,7 +12,7 @@ function Login() {
 
   const submituser = () => {
     const result = loginauth(email, password);
-    console.log(result);
+    // console.log(result);
   };
 
   useEffect(() => {
