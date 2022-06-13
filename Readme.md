@@ -1,10 +1,19 @@
-# Entertainment Night
+# Entertainment Night ( FASAL ASSIGNMENT )
 
 Hello Coder 👋
 
+Welcome to this amazing website for all the movie lovers
+
+Here's a small [demo](https://entertainmentnight.netlify.app/)
+
+Recommended Device -
+**PC**
+Recommended Browser -
+**Chrome**
+
 ## Frontend
 
-Go to client folder 
+Go to `client` folder 
 
 
 ## How to start the project
@@ -19,9 +28,9 @@ Go to client folder
 
 ## Frontend Stacks
 
-**TypeScript**
-**React**
-**Eslint**
+**TypeScript**,
+**React**,
+**Eslint**,
 **Prettier**
 
 ## How the deployment is done
@@ -82,6 +91,8 @@ Cool right ?
 
 Go back to root directory and now on `server` folder.
 
+It's hosed over **Heroku** the url with `CI CD` pipeline for the same.
+
 ## How to start the backend
 
 1. Run `npm install` to download all packages 👍
@@ -90,9 +101,9 @@ Go back to root directory and now on `server` folder.
 
 ## Backend Stacks
 
-**MongoDB**
-**Express**
-**Node**
+**MongoDB**,
+**Express**,
+**Node**,
 **JWT**
 
 
